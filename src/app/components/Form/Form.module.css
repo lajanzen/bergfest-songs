@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.dropdown {
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+input {
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.button {
+  background-color: #ef6e44;
+  padding: 0.5em;
+  border: none;
+  border-radius: 1em;
+  font-weight: bold;
+}
