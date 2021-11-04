@@ -21,3 +21,7 @@ input {
   border-radius: 1em;
   font-weight: bold;
 }
+
+.button:active {
+  background-color: #f0a991;
+}
