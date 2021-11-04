@@ -18,13 +18,13 @@ export default function Form(): JSX.Element {
       <span>- or create a new user -</span>
       <input
         type="text"
-        placeholder="Username"
+        placeholder="First name"
         value={firstName}
         onChange={(event) => setFirstName(event.target.value)}
       />
       <input
-        type="password"
-        placeholder="Password"
+        type="text"
+        placeholder="Last name"
         value={lastName}
         onChange={(event) => setLastName(event.target.value)}
       />
