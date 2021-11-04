@@ -8,11 +8,21 @@ function App(): JSX.Element {
 
   console.log(selectedUserName);
 
+  let content;
+
+  if (selectedUserName) {
+    content = <p>Please add some songs</p>;
+  } else {
+    content = <Form value={selectedUserName} onChange={setSelectedUserName} />;
+  }
+
   return (
     <main className={styles.container}>
       <div className={styles.login}>
-        <Title text="Bergfest" />
-        <Form value={selectedUserName} onChange={setSelectedUserName} />
+        <Title
+          text={selectedUserName ? `Hi ${selectedUserName}` : 'Bergfest'}
+        />
+        {content}
       </div>
     </main>
   );
