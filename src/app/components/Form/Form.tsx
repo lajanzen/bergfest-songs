@@ -15,7 +15,6 @@ export default function Form({ onChange }: FormProps): JSX.Element {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [users, setUsers] = useState<User[]>([]);
-  // const [selectedUser, setSelectedUser] = useState('');
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -44,12 +43,6 @@ export default function Form({ onChange }: FormProps): JSX.Element {
     </option>
   ));
 
-  // function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-  //   setSelectedUser(event.target.value);
-  // }
-
-  // console.log(selectedUser);
-
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <select
@@ -57,7 +50,7 @@ export default function Form({ onChange }: FormProps): JSX.Element {
         onClick={handleSelectClick}
         onChange={(event) => onChange(event.target.value)}
       >
-        <option disabled>Select a fish</option>
+        <option>Select a fish</option>
         {userOptions}
       </select>
       <span>- or create a new user -</span>
