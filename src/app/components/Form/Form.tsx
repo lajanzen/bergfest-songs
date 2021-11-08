@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Form.module.css';
 
 type FormProps = {
-  value: string;
+  value: string | null;
   onChange: (value: string) => void;
 };
 

@@ -4,9 +4,15 @@ import Form from './components/Form/Form';
 import Title from './components/Title/Title';
 
 function App(): JSX.Element {
-  const [selectedUserName, setSelectedUserName] = useState('');
+  const [selectedUserName, setSelectedUserName] = useState(
+    localStorage.getItem('selectedUserName')
+  );
 
-  console.log(selectedUserName);
+  useEffect(() => {
+    if (selectedUserName) {
+      localStorage.setItem('selectedUserName', selectedUserName);
+    }
+  }, [selectedUserName]);
 
   useEffect(() => {
     document.title = selectedUserName ? `Hi ${selectedUserName}` : 'Bergfest';
@@ -15,7 +21,19 @@ function App(): JSX.Element {
   let content;
 
   if (selectedUserName) {
-    content = <p>Please add some songs</p>;
+    content = (
+      <div>
+        <p>Please add some songs</p>
+        <button
+          onClick={() => {
+            localStorage.removeItem('selectedUserName');
+            window.location.reload();
+          }}
+        >
+          LogOut
+        </button>
+      </div>
+    );
   } else {
     content = <Form value={selectedUserName} onChange={setSelectedUserName} />;
   }
