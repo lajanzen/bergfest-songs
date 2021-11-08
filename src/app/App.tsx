@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import Form from './components/Form/Form';
 import Title from './components/Title/Title';
@@ -7,6 +7,10 @@ function App(): JSX.Element {
   const [selectedUserName, setSelectedUserName] = useState('');
 
   console.log(selectedUserName);
+
+  useEffect(() => {
+    document.title = selectedUserName ? `Hi ${selectedUserName}` : 'Bergfest';
+  });
 
   let content;
 
